@@ -1,3 +1,10 @@
+
+function userLoggedInCallback(info)
+{
+  alert('will load content soon');
+}
+
+
 $(document).ready(function()
 {
     $('.sidenav').sidenav();
@@ -69,4 +76,10 @@ $(document).ready(function()
             M.toast({ html: req.responseText });
         });
     });
+
+    $.getJSON("user_info.php", function(info) {
+      if (info)
+        userLoggedInCallback(info);
+    });
+
 });

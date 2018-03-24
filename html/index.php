@@ -103,6 +103,7 @@
 
     <?php } ?>
 
+    <?php if (!$logged_in) { ?>
     <div id="firstPageContainer">
       <img style="margin-left:25px;width:70px;height:70px;" class="logoImg" src="img/logo.png">
       <br>
@@ -114,6 +115,7 @@
         Sign up today and make a food donation and help reduce the worldwide food waste!
       </div>
     </div>
+    <?php } ?>
 
     <!-- Modal Structure -->
   <div id="loginModal" class="modal">

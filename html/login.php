@@ -15,8 +15,9 @@
 	$stmt->execute();
 	$result = $stmt->get_result();
 
-	if ($result && $row = $result->fetch_array()) {
+	if ($result && $row = $result->fetch_assoc()) {
 		$_SESSION['user'] = $row;
+		unset($_SESSION['user']['pass']);
 	} else {
 		http_response_code(401);
 		die("Invalid email/password");
