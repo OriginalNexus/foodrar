@@ -1,0 +1,28 @@
+.modal
+{
+  width:60%;
+  max-height: 90%;
+
+  position: absolute !important;
+  top:50% !important;
+  left:50% !important;
+
+  transform:translate(-50%,-50%) !important;
+}
+
+.btn-flat
+{
+  background-color: rgb(95, 75, 139);
+  color:white;
+}
+
+input
+{
+  box-shadow: 0 1px 0 0 rgb(95, 75, 139) !important;
+  border-bottom: 1px rgb(95, 75, 139) !important;
+}
+
+label.active
+{
+  color:black !important;
+}
