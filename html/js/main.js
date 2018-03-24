@@ -1,6 +1,9 @@
 
-function userLoggedInCallback(info)
+function userInfoCallback(info)
 {
+  $('#sideName').html('<i class="fas fa-user"></i> ' + info['name']);
+  $('#sideKg').html('<i class="fas fa-recycle"></i> ' + info['quantity']);
+
   $('#nameSettings').val(info['name']);
   $('#phoneSettings').val(info['telephone']);
   if (info['is_person'])
@@ -11,6 +14,13 @@ function userLoggedInCallback(info)
   M.updateTextFields();
 }
 
+function getUserInfo()
+{
+  $.getJSON("user_info.php", function(info) {
+    if (info)
+      userInfoCallback(info);
+  });
+}
 
 $(document).ready(function()
 {
@@ -77,7 +87,7 @@ $(document).ready(function()
             pass: $('#passwordRegister').val(),
             name: $('#nameRegister').val(),
             tel: $('#phoneRegister').val(),
-            is_person: $('#personRadioRegister:checked').length }, function(data) {
+            is_person: $('#personRadioRegister').prop('checked') }, function(data) {
                 document.location = '';
         }).fail(function(req) {
             M.toast({ html: req.responseText });
@@ -90,18 +100,16 @@ $(document).ready(function()
             pass: $('#passwordSettings').val(),
             name: $('#nameSettings').val(),
             tel: $('#phoneSettings').val(),
-            is_person: $('#personRadioSettings:checked').length }, function(data) {
-                document.location = '';
+            is_person: $('#personRadioSettings').prop('checked') }, function(data) {
+                M.toast({ html: 'User settings updated!' });
+                getUserInfo();
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });
     });
 
 
-    $.getJSON("user_info.php", function(info) {
-      if (info)
-        userLoggedInCallback(info);
-    });
+    getUserInfo();
 
 
 });

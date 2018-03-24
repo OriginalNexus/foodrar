@@ -66,12 +66,10 @@
       </a>
 
       <div class="sideText" id="sideName">
-        <i class="fas fa-user"></i>
-          <?php print($_SESSION['user']['name']); ?>
+
       </div>
       <div class="sideText" id="sideKg">
-        <i class="fas fa-recycle"></i>
-        <?php print($_SESSION['user']['quantity']); ?> kg
+        
       </div>
 
       <li class="sideItemContainer" id="recents">
