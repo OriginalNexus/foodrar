@@ -5,7 +5,8 @@
   <head>
 
     <title>FoodRAR</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"
@@ -13,6 +14,7 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css"
      integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -31,7 +33,8 @@
 
         <i data-target="sideNav" class="sidenav-trigger fas fa-bars"></i>
         <a href="" class="brand-logo center">
-          <img style="margin-right:8px;" src="img/logo.svg">Viand</img>
+          <img class="logoImg" src="img/logo.png"></img>
+          Viand
         </a>
 
         <i class="right fas fa-sign-in-alt"></i>
@@ -42,34 +45,46 @@
     </nav>
 
     <ul class="sidenav" id="sideNav">
+
       <a href="" id="navBarLogo">
-         <img src="img/logo.svg">
+         <img class="logoImg" src="img/logo.png">
         Viand
       </a>
-      <li>
-        <a style="margin-top:60px;" href="">
+
+      <div class="sideText" id="sideName">
+        <i class="fas fa-user"></i>
+        Cursi Was Here
+      </div>
+      <div class="sideText" id="sideKg">
+        <i class="fas fa-recycle"></i>
+        100.26 kg
+      </div>
+
+      <li class="sideItemContainer" id="recents">
+        <div class="sideItem">
           <i class="fas fa-history sideNavIcons"></i>
           Recents
-        </a>
+        </div>
       </li>
-      <li>
-        <a href="">
+      <li class="sideItemContainer" id="badges">
+        <div class="sideItem">
         <i class="fas fa-certificate sideNavIcons"></i>
         Badges
-      </a>
+      </div>
       </li>
-      <li>
-        <a href="">
+      <li class="sideItemContainer" id="vouchers">
+        <div class="sideItem">
           <i class="fas fa-dollar-sign sideNavIcons"></i>
           Vouchers
-        </a>
+        </div>
       </li>
-      <li id="restaurants">
-        <a href="">
+      <li class="sideItemContainer" id="restaurants">
+        <div class="sideItem">
           <i class="fas fa-utensils sideNavIcons"></i>
           Involved restaurants
-        </a>
+        </div>
       </li>
+
     </ul>
 
   </body>

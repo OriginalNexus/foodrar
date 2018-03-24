@@ -4,6 +4,18 @@ body,html
   margin: 0;
 }
 
+.logoImg
+{
+  margin-right:8px;
+  border-radius:50%;
+  background-color:white;
+  padding: 2px;
+  width: 36px;
+  height:auto;
+  vertical-align: middle;
+  margin-top: -8px;
+}
+
 .nav-wrapper
 {
   background-color: rgb(95, 75, 139);
@@ -55,16 +67,55 @@ body,html
   color:rgb(95, 75, 139);
 }
 
+.sideItem
+{
+  font-size:16px;
+  padding-left: 30px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.sideItem:hover
+{
+  background-color: rgb(95, 75, 139);
+  color: white;
+}
+
+.sideItem:hover > .sideNavIcons
+{
+  color: white !important;
+}
+
 .sideNavIcons
 {
-  margin-right: 0 !important;
+  margin-right: 5px !important;
   color:rgb(95, 75, 139) !important;
 }
 
-@media only screen and (max-width: 601px)
+.sideText
 {
-  nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i
-  {
-    line-height: 56px !important;
-  }
+  color:rgb(95, 75, 139);
+  margin-left:30px;
+  font-size:18px;
+  font-weight: 500;
+}
+
+.fa-user
+{
+  margin-right:5px;
+}
+
+.fa-recycle
+{
+  margin-right: 5px;
+}
+
+#sideName
+{
+  margin-top: 60px;
+}
+
+#sideKg
+{
+  margin-bottom:10px;
 }
