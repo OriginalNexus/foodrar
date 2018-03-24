@@ -17,6 +17,8 @@
     <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"
      integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css"
@@ -114,6 +116,10 @@
       </div>
       <a style="background-color:rgb(95, 75, 139);margin-top:15px; font-size:18px;" data-target="registerModal" class="modal-trigger waves-effect waves-light btn">Sign up</a>
     </div>
+    <?php } else { ?>
+    <div id="pageContainer">
+      <a href="#newPostModal" class="fixed-action-btn modal-trigger btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    </div>
     <?php } ?>
 
     <!-- Modal Structure -->
@@ -164,7 +170,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="phoneRegister" type="text" class="validate">
+            <input id="phoneRegister" type="tel">
             <label for="phoneRegister">Phone number</label>
           </div>
         </div>
@@ -183,7 +189,7 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" id="registerBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+          <button type="submit" id="registerBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</button>
         </div>
       </form>
     </div>
@@ -195,19 +201,19 @@
       <form id="settingsForm">
         <div class="row">
           <div class="input-field col s12">
-            <input id="nameSettings" type="text" class="validate">
+            <input id="nameSettings" type="text">
             <label for="nameSettings">Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="passwordSettings" type="password" class="validate">
+            <input id="passwordSettings" type="password">
             <label for="passwordSettings">Password</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="phoneSettings" type="text" class="validate">
+            <input id="phoneSettings" type="tel">
             <label for="phoneSettings">Phone number</label>
           </div>
         </div>
@@ -227,62 +233,54 @@
         </div>
 
         <div class="modal-footer">
-          <button type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+          <button type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</button>
         </div>
       </form>
     </div>
   </div>
 
-  <?php if ($logged_in) { ?>
-    <div id="pageContainer">
-
-    </div>
-  <?php } ?>
-
 <div id="newPostModal" class="modal">
     <div class="modal-content">
       <h4>New Post</h4>
-
-      <div class="row">
-        <form class="col s12">
-          <p>Available Time</p>
-          <div class="row modal-form-row">
-            <div class="input-field col s12">
-              <input id="fromNewPost" type="text" class="timepicker" required>
-              <label for="fromNewPost">From</label>
-            </div>
+      <form id="newPostForm">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="fromNewPost" type="text" class="timepicker" required>
+            <label for="fromNewPost">From</label>
           </div>
-          <div class="row modal-form-row">
-            <div class="input-field col s12">
-              <input id="toNewPost" type="text" class="timepicker" required>
-              <label for="toNewPost">To</label>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="toNewPost" type="text" class="timepicker" required>
+            <label for="toNewPost">To</label>
           </div>
-          <div class="row modal-form-row">
-            <div class="input-field col s12">
-              <input id="kgNewPost" type="text" required>
-              <label for="kgNewPost">Kilograms</label>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="kgNewPost" type="number" required>
+            <label for="kgNewPost">Kilograms</label>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="addressNewPost" type="text" required>
-              <label for="addressNewPost">Address</label>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="addressNewPost" type="text" required>
+            <label for="addressNewPost">Address</label>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="notesNewPost" type="text">
-              <label for="notesNewPost">Notes</label>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="notesNewPost" type="text">
+            <label for="notesNewPost">Notes</label>
           </div>
-        </form>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a id="newPostBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</a>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</button>
+        </div>
+      </form>
     </div>
   </div>
+
+
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

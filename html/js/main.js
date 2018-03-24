@@ -62,6 +62,8 @@ $(document).ready(function()
         // alert("restaurants clicked.");
     });
 
+    $('.fixed-action-btn').floatingActionButton();
+
     $('#loginForm').submit(function(event)
     {
         $.post('login.php', { email: $('#emailLogin').val(), pass: $('#passwordLogin').val() }, function()
@@ -71,7 +73,7 @@ $(document).ready(function()
         {
             M.toast({ html: req.responseText });
         });
-        
+
         return false;
     });
 
@@ -119,15 +121,25 @@ $(document).ready(function()
         return false;
     });
 
-    $('#newPostBtn').click(function()
+    $('#newPostForm').submit(function()
     {
-        $.post('/newPost.php', {
-            from: $('#fromNewPost').val(),
-            to: $('#toNewPost').val(),
+        $.post('new_post.php', {
+            from: $('#fromNewPost').val() + ":00",
+            to: $('#toNewPost').val() + ":00",
             kg: $('#kgNewPost').val(),
             address: $('#addressNewPost').val(),
-            notes: $('#notesNewPost').val();
+            notes: $('#notesNewPost').val()
+        }, function(data) {
+          M.toast({ html: 'Post added!' });
+        }).fail(function(req) {
+            M.toast({ html: req.responseText });
         });
+
+        return false;
+    });
+
+    $('.timepicker').timepicker({
+      twelveHour: false
     });
 
     getUserInfo();

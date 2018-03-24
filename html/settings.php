@@ -3,7 +3,7 @@
 	require_once('setup.php');
 
 	if (!isset($_SESSION['user'])) {
-		http_response_code('401');
+		http_response_code(401);
 		die('Not logged in');
 	}
 
