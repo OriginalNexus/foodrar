@@ -1,9 +1,8 @@
 
 function userLoggedInCallback(info)
 {
-  alert('will load content soon');
+  // alert('will load content soon');
 }
-
 
 $(document).ready(function()
 {
@@ -27,59 +26,65 @@ $(document).ready(function()
 
     $('#recents').click(function()
     {
-        alert("Recents clicked.");
+        $("#pageContainer").load("recents.html");
     });
 
     $('#badges').click(function()
     {
-        alert("Badges clicked.");
+        // alert("Badges clicked.");
     });
 
     $('#vouchers').click(function()
     {
-        alert("Vouchers clicked.");
+        // alert("Vouchers clicked.");
     });
 
     $('#restaurants').click(function()
     {
-        alert("restaurants clicked.");
+        // alert("restaurants clicked.");
     });
 
     $('#loginBtn').click(function()
     {
-        $.post('login.php', { email: $('#emailLogin').val(), pass: $('#passwordLogin').val() }, function() {
+        $.post('login.php', { email: $('#emailLogin').val(), pass: $('#passwordLogin').val() }, function()
+        {
                 document.location = '';
-        }).fail(function(req) {
+        }).fail(function(req)
+        {
             M.toast({ html: req.responseText });
         });
     });
 
     $('#logoutBtn').click(function()
     {
-        $.post('logout.php', {}, function() {
+        $.post('logout.php', {}, function()
+        {
                 document.location = '';
-        }).fail(function(req) {
+        }).fail(function(req)
+        {
             M.toast({ html: req.responseText });
         });
     });
 
     $('#registerBtn').click(function()
     {
-        $.post('register.php', {
+        $.post('register.php',
+        {
             email: $('#emailRegister').val(),
             pass: $('#passwordRegister').val(),
             name: $('#nameRegister').val(),
             tel: $('#phoneRegister').val(),
-            is_person: $('#isCompanyRegister')[0].checked ? 0 : 1 }, function() {
+            is_person: $('#isCompanyRegister')[0].checked ? 0 : 1 }, function()
+            {
                 document.location = '';
-        }).fail(function(req) {
-            M.toast({ html: req.responseText });
-        });
+            }).fail(function(req)
+            {
+                M.toast({ html: req.responseText });
+            });
     });
 
-    $.getJSON("user_info.php", function(info) {
-      if (info)
-        userLoggedInCallback(info);
-    });
-
+    $.getJSON("user_info.php", function(info)
+     {
+        if (info) userLoggedInCallback(info);
+     });
 });
