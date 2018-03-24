@@ -2,7 +2,7 @@
 function userInfoCallback(info)
 {
   $('#sideName').html('<i class="fas fa-user"></i> ' + info['name']);
-  $('#sideKg').html('<i class="fas fa-recycle"></i> ' + info['quantity']);
+  $('#sideKg').html('<i class="fas fa-recycle"></i> ' + info['quantity'] + ' kg');
 
   $('#nameSettings').val(info['name']);
   $('#phoneSettings').val(info['telephone']);
@@ -49,17 +49,17 @@ $(document).ready(function()
 
     $('#badges').click(function()
     {
-        // alert("Badges clicked.");
+        $("#pageContainer").load("badges.html");
     });
 
     $('#vouchers').click(function()
     {
-        // alert("Vouchers clicked.");
+        $("#pageContainer").load("vouchers.html");
     });
 
     $('#restaurants').click(function()
     {
-        // alert("restaurants clicked.");
+        $("#pageContainer").load("restaurants.html");
     });
 
     $('#loginForm').submit(function(event)
@@ -71,7 +71,7 @@ $(document).ready(function()
         {
             M.toast({ html: req.responseText });
         });
-        
+
         return false;
     });
 
@@ -119,8 +119,5 @@ $(document).ready(function()
         return false;
     });
 
-
     getUserInfo();
-
-
 });

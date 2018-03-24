@@ -165,13 +165,15 @@ body,html
 
 #pageContainer
 {
-  margin-top:32px;
   width: 80%;
   margin-left: 10%;
 }
 
 #motivationalContainer
 {
+  margin-top:32px;
+  margin-left: 10%;
+  width: 80%;
   color: rgb(95, 75, 139);
   font-size: 28px;
   text-align: center;
@@ -192,4 +194,10 @@ body,html
   font-size:18px;
 }
 
+.postContainer
+{
+  background-color: rgb(95, 75, 139) !important;
+  color:white;
+  font-size:18px;
+}
 /*  --------------------------------------------------  */

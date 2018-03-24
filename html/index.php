@@ -103,7 +103,7 @@
 
     <?php if (!$logged_in) { ?>
     <div id="firstPageContainer">
-      <img style="margin-left:25px;width:70px;height:70px;" class="logoImg" src="img/logo.png">
+      <img style="margin-left:22.5px;width:70px;height:70px;" class="logoImg" src="img/logo.png">
       <br>
       <div>Viand</div>
       <div id="firstPageInfo">
@@ -234,6 +234,10 @@
   </div>
 
   <?php if ($logged_in) { ?>
+    <div id="motivationalContainer">
+      "Spread motivation around the world, you demo container..."
+    </div>
+    <br>
     <div id="pageContainer">
 
     </div>
