@@ -105,7 +105,7 @@
 
     <?php if (!$logged_in) { ?>
     <div id="firstPageContainer">
-      <img style="margin-left:25px;width:70px;height:70px;" class="logoImg" src="img/logo.png">
+      <img style="margin-left:22.5px;width:70px;height:70px;" class="logoImg" src="img/logo.png">
       <br>
       <div>Viand</div>
       <div id="firstPageInfo">
@@ -118,6 +118,12 @@
     </div>
     <?php } else { ?>
     <div id="pageContainer">
+      <div id="motivationalContainer">
+        "Spread motivation around the world, you demo container..."
+      </div>
+      <br>
+      <div id="pageContainer">
+
       <a href="#newPostModal" class="fixed-action-btn modal-trigger btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
     </div>
     <?php } ?>
