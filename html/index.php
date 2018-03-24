@@ -103,17 +103,20 @@
 
     <?php } ?>
 
+    <?php if (!$logged_in) { ?>
     <div id="firstPageContainer">
       <img style="margin-left:25px;width:70px;height:70px;" class="logoImg" src="img/logo.png">
       <br>
       <div>Viand</div>
       <div id="firstPageInfo">
         Roughly one third of the food produced in the world for human consumption
-        every year - approximately 1.3 billion tonnes - gets lost or wasted.
-        <br><br>
-        Sign up today and make a food donation and help reduce the worldwide food waste!
+        every year gets lost or wasted.
+        <br>
+        Sign up today, make a food donation and help reduce the worldwide food waste!
       </div>
+      <a style="background-color:rgb(95, 75, 139);margin-top:15px; font-size:18px;" data-target="registerModal" class="modal-trigger waves-effect waves-light btn">Sign up</a>
     </div>
+    <?php } ?>
 
     <!-- Modal Structure -->
   <div id="loginModal" class="modal">
@@ -173,11 +176,17 @@
             </div>
           </div>
           <div class="row">
-              <div class="input-field col s12">
-                  <label>
-                      <input id="isCompanyRegister" type="checkbox" class="filled-in" />
-                      <span>Company</span>
-                  </label>
+              <div class="input-field col s6">
+                <label>
+                  <input class="with-gap" name="registerGroup" type="radio" checked />
+                  <span>Person</span>
+                </label>
+              </div>
+              <div class="input-field col s6">
+                <label>
+                  <input class="with-gap" name="registerGroup" type="radio"/>
+                  <span>Company</span>
+                </label>
               </div>
           </div>
         </form>

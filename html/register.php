@@ -18,7 +18,7 @@
 	$stmt->execute();
 	$result = $stmt->get_result();
 
-	if ($result && $row = $result->fetch_array()) {
+	if ($result && $row = $result->fetch_assoc()) {
 		http_response_code(400);
 		die('Already registered');
 	}
@@ -34,8 +34,9 @@
 	$stmt->execute();
 	$result = $stmt->get_result();
 
-	if ($result && $row = $result->fetch_array()) {
+	if ($result && $row = $result->fetch_assoc()) {
 		$_SESSION['user'] = $row;
+		unset($_SESSION['user']['pass']);
 	}
 
 

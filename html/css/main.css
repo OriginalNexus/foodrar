@@ -152,3 +152,9 @@ body,html
   font-size:22px;
   margin-top:20px;
 }
+
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after
+{
+  border: 2px solid rgb(95, 75, 139) !important;
+  background-color: rgb(95, 75, 139) !important;
+}

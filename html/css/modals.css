@@ -1,3 +1,8 @@
+.modal
+{
+  max-height: 90% !important;
+}
+
 .btn-flat
 {
   background-color: rgb(95, 75, 139);
