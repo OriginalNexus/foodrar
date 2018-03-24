@@ -44,29 +44,31 @@ $(document).ready(function()
 
     $('#recents').click(function()
     {
-        alert("Recents clicked.");
+        $("#pageContainer").load("recents.html");
     });
 
     $('#badges').click(function()
     {
-        alert("Badges clicked.");
+        // alert("Badges clicked.");
     });
 
     $('#vouchers').click(function()
     {
-        alert("Vouchers clicked.");
+        // alert("Vouchers clicked.");
     });
 
     $('#restaurants').click(function()
     {
-        alert("restaurants clicked.");
+        // alert("restaurants clicked.");
     });
 
     $('#loginForm').submit(function(event)
     {
-        $.post('login.php', { email: $('#emailLogin').val(), pass: $('#passwordLogin').val() }, function() {
+        $.post('login.php', { email: $('#emailLogin').val(), pass: $('#passwordLogin').val() }, function()
+        {
                 document.location = '';
-        }).fail(function(req) {
+        }).fail(function(req)
+        {
             M.toast({ html: req.responseText });
         });
         
@@ -75,16 +77,19 @@ $(document).ready(function()
 
     $('#logoutBtn').click(function()
     {
-        $.post('logout.php', {}, function() {
+        $.post('logout.php', {}, function()
+        {
                 document.location = '';
-        }).fail(function(req) {
+        }).fail(function(req)
+        {
             M.toast({ html: req.responseText });
         });
     });
 
     $('#registerForm').submit(function(event)
     {
-        $.post('register.php', {
+        $.post('register.php',
+        {
             email: $('#emailRegister').val(),
             pass: $('#passwordRegister').val(),
             name: $('#nameRegister').val(),
