@@ -188,6 +188,52 @@
     </div>
   </div>
 
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="nameSettings" type="text" class="validate">
+              <label for="nameSettings">Name</label>
+            </div>
+          </div>
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="emailSettings" type="text" class="validate">
+              <label for="emailSettings">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="passwordSettings" type="password" class="validate">
+              <label for="passwordSettings">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="phoneSettings" type="text" class="validate">
+              <label for="phoneSettings">Phone number</label>
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                  <label>
+                      <input id="isCompanySettings" type="checkbox" class="filled-in" />
+                      <span>Company</span>
+                  </label>
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a id="settingsBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+    </div>
+  </div>
+
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

@@ -69,4 +69,17 @@ $(document).ready(function()
             M.toast({ html: req.responseText });
         });
     });
+    $('#settingsBtn').click(function()
+    {
+        $.post('/settings.php', {
+            email: $('#emailSettings').val(),
+            pass: $('#passwordSettings').val(),
+            name: $('#nameSettings').val(),
+            tel: $('#phoneSettings').val(),
+            is_person: $('#isCompanySettings')[0].checked ? 0 : 1 }, function() {
+                document.location = '/';
+        }).fail(function(req) {
+            M.toast({ html: req.responseText });
+        });
+    });
 });
