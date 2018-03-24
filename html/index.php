@@ -1,5 +1,5 @@
 <?php
-        require('setup.php');
+        require_once('setup.php');
 
         $logged_in = isset($_SESSION['user']);
 ?>
@@ -45,9 +45,13 @@
           Viand
         </a>
 
+        <?php if (!$logged_in) { ?>
         <i data-target="loginModal" class="modal-trigger right fas fa-sign-in-alt"></i>
         <i data-target="registerModal" class="modal-trigger right fas fa-user-plus"></i>
-        <i class="right fas fa-cog"></i>
+        <?php } else { ?>
+        <i id="logoutBtn" class="right fas fa-sign-out-alt"></i>
+        <i id="settingsBtn" class="right fas fa-cog"></i>
+        <?php } ?>
 
       </div>
     </nav>
@@ -130,7 +134,7 @@
       </div>
     </div>
     <div class="modal-footer">
-      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Sign in</a>
+      <a id="loginBtn" class="modal-action modal-close waves-effect waves-green btn-flat">Sign in</a>
     </div>
   </div>
 
@@ -164,11 +168,19 @@
               <label for="phoneRegister">Phone number</label>
             </div>
           </div>
+          <div class="row">
+              <div class="input-field col s12">
+                  <label>
+                      <input id="isCompanyRegister" type="checkbox" class="filled-in" />
+                      <span>Company</span>
+                  </label>
+              </div>
+          </div>
         </form>
       </div>
     </div>
     <div class="modal-footer">
-      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+      <a id="registerBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
     </div>
   </div>
 

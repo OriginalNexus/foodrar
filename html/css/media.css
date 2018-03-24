@@ -36,3 +36,11 @@
     line-height: 56px !important;
   }
 }
+
+@media only screen and (max-width: 992px)
+{
+    nav .brand-logo {
+        left: 0;
+        transform: none;
+    }
+}

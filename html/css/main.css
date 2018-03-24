@@ -32,18 +32,18 @@ body,html
   display: inline-block !important;
 }
 
-.fa-cog
-{
-  display: none;
-  cursor: pointer !important;
-}
-
 .fa-user-plus
 {
   cursor: pointer !important;
 }
 
 .fa-sign-in-alt
+{
+  cursor: pointer !important;
+  margin-right:15px;
+}
+
+.fa-sign-out-alt
 {
   cursor: pointer !important;
   margin-right:15px;
