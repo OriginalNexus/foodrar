@@ -40,8 +40,8 @@ $(document).ready(function()
 
     $('#loginBtn').click(function()
     {
-        $.post('/login.php', { email: $('#emailLogin').val(), pass: $('#passwordLogin').val() }, function() {
-                document.location = '/';
+        $.post('login.php', { email: $('#emailLogin').val(), pass: $('#passwordLogin').val() }, function() {
+                document.location = '';
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });
@@ -49,8 +49,8 @@ $(document).ready(function()
 
     $('#logoutBtn').click(function()
     {
-        $.post('/logout.php', {}, function() {
-                document.location = '/';
+        $.post('logout.php', {}, function() {
+                document.location = '';
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });
@@ -58,13 +58,13 @@ $(document).ready(function()
 
     $('#registerBtn').click(function()
     {
-        $.post('/register.php', {
+        $.post('register.php', {
             email: $('#emailRegister').val(),
             pass: $('#passwordRegister').val(),
             name: $('#nameRegister').val(),
             tel: $('#phoneRegister').val(),
             is_person: $('#isCompanyRegister')[0].checked ? 0 : 1 }, function() {
-                document.location = '/';
+                document.location = '';
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });
