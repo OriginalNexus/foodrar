@@ -21,6 +21,7 @@
      integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/media.css">
+    <link rel="stylesheet" type="text/css" href="css/modals.css">
 
   </head>
 
@@ -38,8 +39,8 @@
           Viand
         </a>
 
-        <i class="right fas fa-sign-in-alt"></i>
-        <i class="right fas fa-user-plus"></i>
+        <i data-target="loginModal" class="modal-trigger right fas fa-sign-in-alt"></i>
+        <i data-target="registerModal" class="modal-trigger right fas fa-user-plus"></i>
         <i class="right fas fa-cog"></i>
 
       </div>
@@ -99,6 +100,71 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Modal Structure -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h4>Sign in</h4>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="emailLogin" type="text" class="validate">
+              <label for="emailLogin">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="passwordLogin" type="password" class="validate">
+              <label for="passwordLogin">Password</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Sign in</a>
+    </div>
+  </div>
+
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="nameRegister" type="text" class="validate">
+              <label for="nameRegister">Name</label>
+            </div>
+          </div>
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="emailRegister" type="text" class="validate">
+              <label for="emailRegister">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="passwordRegister" type="password" class="validate">
+              <label for="passwordRegister">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="phoneRegister" type="text" class="validate">
+              <label for="phoneRegister">Phone number</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+    </div>
+  </div>
 
   </body>
 
