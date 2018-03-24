@@ -283,6 +283,52 @@
       <a id="newPostBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</a>
     </div>
   </div>
+
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <h4>Do you want to take this command?</h4>
+      <form id="confirmationForm">
+        <div class="row">
+          <div class="input-field col s6">
+            <label>
+              <input id="yesConfirmation" class="with-gap" name="settingGroup" type="radio" checked />
+              <span>Yes</span>
+            </label>
+          </div>
+          <div class="input-field col s6">
+            <label>
+              <input id="noConfirmation" class="with-gap" name="settingGroup" type="radio"/>
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="completeModal" class="modal">
+    <div class="modal-content">
+      <h4>Complete Order</h4>
+      <form id="completeForm">
+        <div class="row">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="newQuantity" type="Number">
+              <label for="newQuantity">Quantity picked</label>
+            </div>
+          </div>
+
+        <div class="modal-footer">
+          <button type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
