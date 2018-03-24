@@ -243,6 +243,50 @@
     </div>
   </div>
 
+<div id="newPostModal" class="modal">
+    <div class="modal-content">
+      <h4>New Post</h4>
+
+      <div class="row">
+        <form class="col s12">
+          <p>Available Time</p>
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="fromNewPost" type="text" class="timepicker" required>
+              <label for="fromNewPost">From</label>
+            </div>
+          </div>
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="toNewPost" type="text" class="timepicker" required>
+              <label for="toNewPost">To</label>
+            </div>
+          </div>
+          <div class="row modal-form-row">
+            <div class="input-field col s12">
+              <input id="kgNewPost" type="text" required>
+              <label for="kgNewPost">Kilograms</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="addressNewPost" type="text" required>
+              <label for="addressNewPost">Address</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="notesNewPost" type="text">
+              <label for="notesNewPost">Notes</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a id="newPostBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Send</a>
+    </div>
+  </div>
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

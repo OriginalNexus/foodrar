@@ -91,6 +91,16 @@ $(document).ready(function()
         });
     });
 
+    $('#newPostBtn').click(function()
+    {
+        $.post('/newPost.php', {
+            from: $('#fromNewPost').val(),
+            to: $('#toNewPost').val(),
+            kg: $('#kgNewPost').val(),
+            address: $('#addressNewPost').val(),
+            notes: $('#notesNewPost').val();
+        });
+    });
 
     $.getJSON("user_info.php", function(info) {
       if (info)
