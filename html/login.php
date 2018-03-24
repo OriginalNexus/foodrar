@@ -17,12 +17,11 @@
 
 	if ($result && $row = $result->fetch_assoc()) {
 		$_SESSION['user'] = $row;
-		unset($_SESSION['user']['pass']);
 	} else {
 		http_response_code(401);
 		die("Invalid email/password");
 	}
 
-	header("Location: /");
+	header("Location: ./");
 
 ?>

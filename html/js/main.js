@@ -1,7 +1,14 @@
 
 function userLoggedInCallback(info)
 {
-  alert('will load content soon');
+  $('#nameSettings').val(info['name']);
+  $('#phoneSettings').val(info['telephone']);
+  if (info['is_person'])
+    $('#personRadioSettings').prop("checked", true);
+  else
+    $('#companyRadioSettings').prop("checked", true);
+
+  M.updateTextFields();
 }
 
 
@@ -70,7 +77,7 @@ $(document).ready(function()
             pass: $('#passwordRegister').val(),
             name: $('#nameRegister').val(),
             tel: $('#phoneRegister').val(),
-            is_person: $('#isCompanyRegister')[0].checked ? 0 : 1 }, function() {
+            is_person: $('#personRadioRegister:checked').length }, function(data) {
                 document.location = '';
         }).fail(function(req) {
             M.toast({ html: req.responseText });
@@ -79,13 +86,12 @@ $(document).ready(function()
 
     $('#settingsBtn').click(function()
     {
-        $.post('/settings.php', {
-            email: $('#emailSettings').val(),
+        $.post('settings.php', {
             pass: $('#passwordSettings').val(),
             name: $('#nameSettings').val(),
             tel: $('#phoneSettings').val(),
-            is_person: $('#isCompanySettings')[0].checked ? 0 : 1 }, function() {
-                document.location = '/';
+            is_person: $('#personRadioSettings:checked').length }, function(data) {
+                document.location = '';
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });

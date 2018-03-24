@@ -50,7 +50,7 @@
         <i data-target="registerModal" class="modal-trigger right fas fa-user-plus"></i>
         <?php } else { ?>
         <i id="logoutBtn" class="right fas fa-sign-out-alt"></i>
-        <i id="settingsBtn" class="right fas fa-cog"></i>
+        <i data-target="settingsModal" class="modal-trigger right fas fa-cog"></i>
         <?php } ?>
 
       </div>
@@ -127,13 +127,13 @@
         <form class="col s12">
           <div class="row modal-form-row">
             <div class="input-field col s12">
-              <input id="emailLogin" type="text" class="validate">
+              <input id="emailLogin" type="email" class="validate" required>
               <label for="emailLogin">Email</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="passwordLogin" type="password" class="validate">
+              <input id="passwordLogin" type="password" class="validate" required>
               <label for="passwordLogin">Password</label>
             </div>
           </div>
@@ -178,13 +178,13 @@
           <div class="row">
               <div class="input-field col s6">
                 <label>
-                  <input class="with-gap" name="registerGroup" type="radio" checked />
+                  <input id="personRadioRegister" class="with-gap" name="registerGroup" type="radio" checked />
                   <span>Person</span>
                 </label>
               </div>
               <div class="input-field col s6">
                 <label>
-                  <input class="with-gap" name="registerGroup" type="radio"/>
+                  <input id="companyRadioRegsiter" class="with-gap" name="registerGroup" type="radio"/>
                   <span>Company</span>
                 </label>
               </div>
@@ -199,7 +199,7 @@
 
   <div id="settingsModal" class="modal">
     <div class="modal-content">
-      <h4>Sign up</h4>
+      <h4>Settings</h4>
 
       <div class="row">
         <form class="col s12">
@@ -207,12 +207,6 @@
             <div class="input-field col s12">
               <input id="nameSettings" type="text" class="validate">
               <label for="nameSettings">Name</label>
-            </div>
-          </div>
-          <div class="row modal-form-row">
-            <div class="input-field col s12">
-              <input id="emailSettings" type="text" class="validate">
-              <label for="emailSettings">Email</label>
             </div>
           </div>
           <div class="row">
@@ -228,18 +222,24 @@
             </div>
           </div>
           <div class="row">
-              <div class="input-field col s12">
-                  <label>
-                      <input id="isCompanySettings" type="checkbox" class="filled-in" />
-                      <span>Company</span>
-                  </label>
-              </div>
+            <div class="input-field col s6">
+              <label>
+                <input id="personRadioSettings" class="with-gap" name="settingGroup" type="radio" checked />
+                <span>Person</span>
+              </label>
+            </div>
+            <div class="input-field col s6">
+              <label>
+                <input id="companyRadioSettings" class="with-gap" name="settingGroup" type="radio"/>
+                <span>Company</span>
+              </label>
+            </div>
           </div>
         </form>
       </div>
     </div>
     <div class="modal-footer">
-      <a id="settingsBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+      <a id="settingsBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
     </div>
   </div>
 

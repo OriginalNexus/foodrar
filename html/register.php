@@ -36,10 +36,9 @@
 
 	if ($result && $row = $result->fetch_assoc()) {
 		$_SESSION['user'] = $row;
-		unset($_SESSION['user']['pass']);
 	}
 
 
-	header('Location: /');
+	header('Location: ./');
 
 ?>

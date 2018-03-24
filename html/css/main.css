@@ -43,7 +43,7 @@ body,html
   display: inline-block !important;
 }
 
-.fa-user-plus
+.fa-user-plus, .fa-cog
 {
   cursor: pointer !important;
 }

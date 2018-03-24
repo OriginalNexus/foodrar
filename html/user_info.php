@@ -2,6 +2,10 @@
 
 	require_once('setup.php');
 
-	print(json_encode($_SESSION['user']));
+	$info = $_SESSION['user'];
+
+	unset($info['pass']);
+
+	print(json_encode($info));
 
 ?>
