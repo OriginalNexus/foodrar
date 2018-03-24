@@ -69,7 +69,7 @@
 
       </div>
       <div class="sideText" id="sideKg">
-        
+
       </div>
 
       <li class="sideItemContainer" id="recents">
@@ -120,124 +120,116 @@
   <div id="loginModal" class="modal">
     <div class="modal-content">
       <h4>Sign in</h4>
-
-      <div class="row">
-        <form class="col s12">
-          <div class="row modal-form-row">
-            <div class="input-field col s12">
-              <input id="emailLogin" type="email" class="validate" required>
-              <label for="emailLogin">Email</label>
-            </div>
+      <form id="loginForm">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="emailLogin" type="email" required>
+            <label for="emailLogin">Email</label>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="passwordLogin" type="password" class="validate" required>
-              <label for="passwordLogin">Password</label>
-            </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="passwordLogin" type="password" required>
+            <label for="passwordLogin">Password</label>
           </div>
-        </form>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a id="loginBtn" class="modal-action modal-close waves-effect waves-green btn-flat">Sign in</a>
-    </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button id="loginBtn" type=submit class="modal-action modal-close waves-effect waves-green btn-flat">Sign in</button>
+        </div>
+      </form>
   </div>
 
   <div id="registerModal" class="modal">
     <div class="modal-content">
       <h4>Sign up</h4>
-
-      <div class="row">
-        <form class="col s12">
-          <div class="row modal-form-row">
-            <div class="input-field col s12">
-              <input id="nameRegister" type="text" class="validate">
-              <label for="nameRegister">Name</label>
+      <form id="registerForm">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="nameRegister" type="text" required>
+            <label for="nameRegister">Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="emailRegister" type="text" required>
+            <label for="emailRegister">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="passwordRegister" type="password" required>
+            <label for="passwordRegister">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="phoneRegister" type="text" class="validate">
+            <label for="phoneRegister">Phone number</label>
+          </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+              <label>
+                <input id="personRadioRegister" class="with-gap" name="registerGroup" type="radio" checked />
+                <span>Person</span>
+              </label>
             </div>
-          </div>
-          <div class="row modal-form-row">
-            <div class="input-field col s12">
-              <input id="emailRegister" type="text" class="validate">
-              <label for="emailRegister">Email</label>
+            <div class="input-field col s6">
+              <label>
+                <input id="companyRadioRegsiter" class="with-gap" name="registerGroup" type="radio"/>
+                <span>Company</span>
+              </label>
             </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="passwordRegister" type="password" class="validate">
-              <label for="passwordRegister">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="phoneRegister" type="text" class="validate">
-              <label for="phoneRegister">Phone number</label>
-            </div>
-          </div>
-          <div class="row">
-              <div class="input-field col s6">
-                <label>
-                  <input id="personRadioRegister" class="with-gap" name="registerGroup" type="radio" checked />
-                  <span>Person</span>
-                </label>
-              </div>
-              <div class="input-field col s6">
-                <label>
-                  <input id="companyRadioRegsiter" class="with-gap" name="registerGroup" type="radio"/>
-                  <span>Company</span>
-                </label>
-              </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a id="registerBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="registerBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
+        </div>
+      </form>
     </div>
   </div>
 
   <div id="settingsModal" class="modal">
     <div class="modal-content">
       <h4>Settings</h4>
+      <form id="settingsForm">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="nameSettings" type="text" class="validate">
+            <label for="nameSettings">Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="passwordSettings" type="password" class="validate">
+            <label for="passwordSettings">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="phoneSettings" type="text" class="validate">
+            <label for="phoneSettings">Phone number</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label>
+              <input id="personRadioSettings" class="with-gap" name="settingGroup" type="radio" checked />
+              <span>Person</span>
+            </label>
+          </div>
+          <div class="input-field col s6">
+            <label>
+              <input id="companyRadioSettings" class="with-gap" name="settingGroup" type="radio"/>
+              <span>Company</span>
+            </label>
+          </div>
+        </div>
 
-      <div class="row">
-        <form class="col s12">
-          <div class="row modal-form-row">
-            <div class="input-field col s12">
-              <input id="nameSettings" type="text" class="validate">
-              <label for="nameSettings">Name</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="passwordSettings" type="password" class="validate">
-              <label for="passwordSettings">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="phoneSettings" type="text" class="validate">
-              <label for="phoneSettings">Phone number</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <label>
-                <input id="personRadioSettings" class="with-gap" name="settingGroup" type="radio" checked />
-                <span>Person</span>
-              </label>
-            </div>
-            <div class="input-field col s6">
-              <label>
-                <input id="companyRadioSettings" class="with-gap" name="settingGroup" type="radio"/>
-                <span>Company</span>
-              </label>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <a id="settingsBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+        <div class="modal-footer">
+          <button type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Save</a>
+        </div>
+      </form>
     </div>
   </div>
 

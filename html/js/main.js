@@ -62,13 +62,15 @@ $(document).ready(function()
         alert("restaurants clicked.");
     });
 
-    $('#loginBtn').click(function()
+    $('#loginForm').submit(function(event)
     {
         $.post('login.php', { email: $('#emailLogin').val(), pass: $('#passwordLogin').val() }, function() {
                 document.location = '';
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });
+        
+        return false;
     });
 
     $('#logoutBtn').click(function()
@@ -80,32 +82,36 @@ $(document).ready(function()
         });
     });
 
-    $('#registerBtn').click(function()
+    $('#registerForm').submit(function(event)
     {
         $.post('register.php', {
             email: $('#emailRegister').val(),
             pass: $('#passwordRegister').val(),
             name: $('#nameRegister').val(),
             tel: $('#phoneRegister').val(),
-            is_person: $('#personRadioRegister').prop('checked') }, function(data) {
+            is_person: $('#personRadioRegister').prop('checked') ? 1 : 0 }, function(data) {
                 document.location = '';
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });
+
+        return false;
     });
 
-    $('#settingsBtn').click(function()
+    $('#settingsForm').submit(function(event)
     {
         $.post('settings.php', {
             pass: $('#passwordSettings').val(),
             name: $('#nameSettings').val(),
             tel: $('#phoneSettings').val(),
-            is_person: $('#personRadioSettings').prop('checked') }, function(data) {
+            is_person: $('#personRadioSettings').prop('checked') ? 1 : 0 }, function(data) {
                 M.toast({ html: 'User settings updated!' });
                 getUserInfo();
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });
+
+        return false;
     });
 
 
