@@ -117,15 +117,15 @@
       <a style="background-color:rgb(95, 75, 139);margin-top:15px; font-size:18px;" data-target="registerModal" class="modal-trigger waves-effect waves-light btn">Sign up</a>
     </div>
     <?php } else { ?>
-    <div id="pageContainer">
       <div id="motivationalContainer">
         "Spread motivation around the world, you demo container..."
       </div>
       <br>
       <div id="pageContainer">
 
-      <a href="#newPostModal" class="fixed-action-btn modal-trigger btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-    </div>
+
+        <a href="#newPostModal" class="fixed-action-btn modal-trigger btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+      </div>
     <?php } ?>
 
     <!-- Modal Structure -->

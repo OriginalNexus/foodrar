@@ -187,11 +187,15 @@ body,html
 
 .customContainer
 {
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  padding: 10px;
   background-color: rgb(95, 75, 139) !important;
   color:white;
   font-size:18px;
+}
+
+.location {
+  margin-left: 12px;
 }
 
 .postContainer
