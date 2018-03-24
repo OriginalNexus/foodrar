@@ -103,13 +103,33 @@
 
     <?php } ?>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="js/main.js"></script>
+    <div id="firstPageContainer">
+      <img style="margin-left:30px;width:100px;height:100px;" class="logoImg" src="img/logo.png">
+      <br>
+      <div>Viand</div>
+      <div id="firstPageInfo">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Roughly one third of the food produced in the world for human consumption
+        every year - approximately 1.3 billion tonnes - gets lost or wasted.
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Our company collects food waste, which can be recycled in several ways including:
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right"></i>
+        n-vessel composting involves mixing food waste with garden waste – shredding it and then
+        composting it in an enclosed systemfor around 2-4 weeks (temperatures of up to 70°C speed
+        up the process and ensure any harmful  microbes are killed off).
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right"></i>
+        Anaerobic Digestion uses microorganisms  to break down food waste, animal manure, slurries
+        and energy crops in the absence of oxygen, inside an enclosed system.
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign up today and make a food donation and help reduce the worldwide food waste!
+
+      </div>
+    </div>
 
     <!-- Modal Structure -->
   <div id="loginModal" class="modal">
@@ -183,6 +203,14 @@
       <a id="registerBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</a>
     </div>
   </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
 
   </body>
 

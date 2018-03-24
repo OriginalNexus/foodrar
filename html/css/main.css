@@ -4,6 +4,17 @@ body,html
   margin: 0;
 }
 
+::selection
+{
+  background-color: rgb(95, 75, 139);
+  color: white;
+}
+::-moz-selection
+{
+  background-color: rgb(95, 75, 139);
+  color: white;
+}
+
 .logoImg
 {
   margin-right:8px;
@@ -118,4 +129,25 @@ body,html
 #sideKg
 {
   margin-bottom:10px;
+}
+
+/*  --------------------------------------------------  */
+
+#firstPageContainer
+{
+  color:rgb(95, 75, 139);
+  width:100%;
+  text-align: center;
+  font-size: 60px;
+  margin-top:52px;
+  margin-bottom:42px;
+}
+
+#firstPageInfo
+{
+  text-align: left;
+  font-size:22px;
+  width:70%;
+  margin-top:20px;
+  margin-left:15%;
 }
