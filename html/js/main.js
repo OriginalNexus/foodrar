@@ -119,6 +119,16 @@ $(document).ready(function()
         return false;
     });
 
+    $('#newPostBtn').click(function()
+    {
+        $.post('/newPost.php', {
+            from: $('#fromNewPost').val(),
+            to: $('#toNewPost').val(),
+            kg: $('#kgNewPost').val(),
+            address: $('#addressNewPost').val(),
+            notes: $('#notesNewPost').val();
+        });
+    });
 
     getUserInfo();
 
