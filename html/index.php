@@ -1,5 +1,7 @@
 <?php
         require('setup.php');
+
+        $logged_in = isset($_SESSION['user']);
 ?>
 
 <!DOCTYPE HTML>
@@ -30,11 +32,15 @@
     <nav>
       <div class="nav-wrapper">
 
-        <?php if (isset($_SESSION['user'])) { ?>
-          <i data-target="sideNav" class="sidenav-trigger fas fa-bars"></i>
+        <?php if ($logged_in) { ?>
+        <i data-target="sideNav" class="sidenav-trigger fas fa-bars"></i>
         <?php } ?>
 
+        <?php if ($logged_in) { ?>
         <a href="" class="brand-logo center">
+        <?php } else { ?>
+        <a href="" class="brand-logo" style="margin-left: 15px;">
+        <?php } ?>
           <img class="logoImg" src="img/logo.png"></img>
           Viand
         </a>
@@ -46,50 +52,50 @@
       </div>
     </nav>
 
-    <?php if (isset($_SESSION['user'])) { ?>
+    <?php if ($logged_in ) { ?>
 
-      <ul class="sidenav" id="sideNav">
+    <ul class="sidenav" id="sideNav">
 
-        <a href="" id="navBarLogo">
-          <img class="logoImg" src="img/logo.png">
-          Viand
-        </a>
+      <a href="" id="navBarLogo">
+        <img class="logoImg" src="img/logo.png">
+        Viand
+      </a>
 
-        <div class="sideText" id="sideName">
-          <i class="fas fa-user"></i>
-            <?php print($_SESSION['user']['name']); ?>
+      <div class="sideText" id="sideName">
+        <i class="fas fa-user"></i>
+          <?php print($_SESSION['user']['name']); ?>
+      </div>
+      <div class="sideText" id="sideKg">
+        <i class="fas fa-recycle"></i>
+        <?php print($_SESSION['user']['quantity']); ?> kg
+      </div>
+
+      <li class="sideItemContainer" id="recents">
+        <div class="sideItem">
+          <i class="fas fa-history sideNavIcons"></i>
+          Recents
         </div>
-        <div class="sideText" id="sideKg">
-          <i class="fas fa-recycle"></i>
-          <?php print($_SESSION['user']['quantity']); ?> kg
+      </li>
+      <li class="sideItemContainer" id="badges">
+        <div class="sideItem">
+        <i class="fas fa-certificate sideNavIcons"></i>
+        Badges
+      </div>
+      </li>
+      <li class="sideItemContainer" id="vouchers">
+        <div class="sideItem">
+          <i class="fas fa-dollar-sign sideNavIcons"></i>
+          Vouchers
         </div>
-
-        <li class="sideItemContainer" id="recents">
-          <div class="sideItem">
-            <i class="fas fa-history sideNavIcons"></i>
-            Recents
-          </div>
-        </li>
-        <li class="sideItemContainer" id="badges">
-          <div class="sideItem">
-          <i class="fas fa-certificate sideNavIcons"></i>
-          Badges
+      </li>
+      <li class="sideItemContainer" id="restaurants">
+        <div class="sideItem">
+          <i class="fas fa-utensils sideNavIcons"></i>
+          Involved restaurants
         </div>
-        </li>
-        <li class="sideItemContainer" id="vouchers">
-          <div class="sideItem">
-            <i class="fas fa-dollar-sign sideNavIcons"></i>
-            Vouchers
-          </div>
-        </li>
-        <li class="sideItemContainer" id="restaurants">
-          <div class="sideItem">
-            <i class="fas fa-utensils sideNavIcons"></i>
-            Involved restaurants
-          </div>
-        </li>
+      </li>
 
-      </ul>
+    </ul>
 
     <?php } ?>
 
