@@ -36,23 +36,80 @@ function setQuote()
 
 function getRecents()
 {
+  $('#contentTitle').empty();
+  $('#itemsContainer').empty();
+  $('.fixed-action-btn').hide();
   $.getJSON("recents.php", function(recents) {
-    $('#postsContainer').empty();
-    var postDivTemplate = $("<div>");
-    postDivTemplate.load('post.html', function() {
+    $('#contentTitle').text('Recent posts');
+    var itemDivTemplate = $("<div>");
+    itemDivTemplate.load('post.html', function() {
       $.each(recents, function() {
-        var postDiv = postDivTemplate.clone();
-        postDiv.find('.weight').text(this['quantity'] + " kg");
-        postDiv.find('.location').text(this['location']);
-        postDiv.find('.date-time').text(this['date']);
-        postDiv.find('.status').text(this['status_display_name']);
-        postDiv.appendTo('#postsContainer');
+        var itemDiv = itemDivTemplate.clone();
+        itemDiv.find('.weight').text(this['quantity'] + " kg");
+        itemDiv.find('.location').text(this['location']);
+        itemDiv.find('.date-time').text(this['date']);
+        itemDiv.find('.status').text(this['status_display_name']);
+        itemDiv.appendTo('#itemsContainer');
+      });
+      $('.fixed-action-btn').show();
+    });
+  }).fail(function(req) {
+    M.toast({ html: req.responseText });
+  });
+}
+
+function getBadges()
+{
+  $('#contentTitle').empty();
+  $('#itemsContainer').empty();
+  $('.fixed-action-btn').hide();
+  $.getJSON("badges.php", function(badges) {
+    $('#contentTitle').text('Badges');
+    var itemDivTemplate = $("<div>");
+    itemDivTemplate.load('badge.html', function() {
+      $.each(badges, function() {
+        var itemDiv = itemDivTemplate.clone();
+        itemDiv.find('.badgeImg').attr('src', this['icon_url']);
+        itemDiv.find('.badgeName').text(this['name']);
+        itemDiv.find('.badgeWeight').text(this['target'] + ' kg');
+        itemDiv.find('.badgePercent').text('(' + Math.round(Math.min(100, userInfo['quantity'] / this['target'] * 100) * 100) / 100 + '%)');
+        itemDiv.appendTo('#itemsContainer');
       });
     });
   }).fail(function(req) {
     M.toast({ html: req.responseText });
   });
+}
 
+function getRestaurants()
+{
+  $('#contentTitle').empty();
+  $('#itemsContainer').empty();
+  $('.fixed-action-btn').hide();
+  $.getJSON('restaurants.php', function(recents) {
+    $('#contentTitle').text('Involved restaurants');
+    var itemDivTemplate = $("<div>");
+    itemDivTemplate.load('post.html', function() {
+      $.each(recents, function() {
+        var itemDiv = itemDivTemplate.clone();
+        itemDiv.find('.weight').text(this['quantity'] + " kg");
+        itemDiv.find('.location').text(this['location']);
+        itemDiv.find('.date-time').text(this['date']);
+        itemDiv.find('.status').text(this['status_display_name']);
+        itemDiv.appendTo('#itemsContainer');
+      });
+    });
+  }).fail(function(req) {
+    M.toast({ html: req.responseText });
+  });
+}
+
+function getVouchers()
+{
+  $('#contentTitle').empty();
+  $('#itemsContainer').empty();
+  $('.fixed-action-btn').hide();
+  $('#contentTitle').text('Vouchers');
 }
 
 $(document).ready(function()
@@ -82,17 +139,17 @@ $(document).ready(function()
 
     $('#badges').click(function()
     {
-        $("#pageContainer").load("badges.html");
+        getBadges();
     });
 
     $('#vouchers').click(function()
     {
-        $("#pageContainer").load("vouchers.html");
+        getVouchers();
     });
 
     $('#restaurants').click(function()
     {
-        $("#pageContainer").load("restaurants.html");
+        getRestaurants();
     });
 
     $('.fixed-action-btn').floatingActionButton();

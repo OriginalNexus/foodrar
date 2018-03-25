@@ -58,7 +58,7 @@
       </div>
     </nav>
 
-    <?php if ($logged_in ) { ?>
+    <?php if ($logged_in) { ?>
 
     <ul class="sidenav" id="sideNav">
 
@@ -122,8 +122,8 @@
       </div>
       <br>
       <div id="pageContainer">
-        <div class="leftTitle">Recent posts</div>
-        <div id="postsContainer">
+        <div id="contentTitle" class="leftTitle"></div>
+        <div id="itemsContainer">
 
         </div>
 

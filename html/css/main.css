@@ -227,3 +227,8 @@ body,html
   background-color:white;
   padding: 2px;
 }
+
+.badgePercent
+{
+  margin-left: 5px;
+}
