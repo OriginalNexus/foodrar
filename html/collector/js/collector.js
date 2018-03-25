@@ -17,6 +17,13 @@ function getUserInfo()
   });
 }
 
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
 function getPosts()
 {
   $('#itemsContainer').empty();
@@ -27,7 +34,9 @@ function getPosts()
         var itemDiv = itemDivTemplate.clone();
         itemDiv.find('.weight').text(this['quantity'] + " kg");
         itemDiv.find('.location').text(this['location']);
-        itemDiv.find('.date-time').text(this['date']);
+        var time1 = new Date("July 1 2018, " + this['time_lower']);
+        var time2 = new Date("July 1 2018, " + this['time_upper']);
+        itemDiv.find('.date-time').text(addZero(time1.getHours()) + ":" + addZero(time1.getMinutes()) + " - " + addZero(time2.getHours()) + ":" + addZero(time2.getMinutes()));
         itemDiv.find('.status').text(this['status_display_name']);
         itemDiv.find('.userName').text(this['user_name']);
         itemDiv.find('.phoneNumber').text(this['user_telephone']);
