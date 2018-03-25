@@ -31,3 +31,20 @@ body
   opacity:0.9;
   margin-right: 15px;
 }
+
+.customContainer
+{
+  display: flex;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgb(95, 75, 139) !important;
+  color:white;
+  font-size:18px;
+}
+
+#pageContainer
+{
+  width:70%;
+  margin-left: 15%;
+}

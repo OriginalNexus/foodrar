@@ -213,6 +213,7 @@ body,html
 {
   display: flex;
   padding: 10px;
+  border-radius: 6px;
   background-color: rgb(95, 75, 139) !important;
   color:white;
   font-size:18px;

@@ -39,7 +39,29 @@
       </div>
     </nav>
 
+    <div id="pageContainer">
 
+      <br>
+      <div class="customContainer">
+      	<div style="display: flex; flex-direction: column; flex-grow: 1;">
+      		<div>
+      		  <i class="fas fa-recycle"></i>
+      		  <span class="weight">1.5kg</span>
+      		</div>
+
+      		<div>
+      			<i class="fas fa-map-marker"></i>
+      			<span class="location">Str. bla bla bla, bla bla bla bla bla...</span>
+      		</div>
+      	</div>
+
+      	<div style="display: flex; flex-direction: column; align-items: flex-end;">
+      	  <div class="status">Not taken</div>
+      	  <div class="date-time" style="flex-shrink: 0; white-space: nowrap;">23/11/2016 1:42 AM</div>
+      	</div>
+      </div>
+
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
