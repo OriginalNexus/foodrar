@@ -167,13 +167,13 @@ $(document).ready(function()
 
     $('#vouchers').click(function()
     {
-      currentDisplay = 2;
+      currentDisplay = 3;
       refreshContent();
     });
 
     $('#restaurants').click(function()
     {
-      currentDisplay = 3;
+      currentDisplay = 2;
       refreshContent();
     });
 
