@@ -2,7 +2,7 @@
 
 	require_once('setup.php');
 
-	if (empty($_POST['from']) || empty($_POST['to']) || empty($_POST['kg']) || empty($_POST['address'])) {
+	if (empty($_POST['email']) || empty($_POST['pass']) || empty($_POST['tel']) || empty($_POST['name'] || !isset($_POST['is_person']))) {
 		http_response_code(400);
 		die('Empty name/email/password/telephone');
 	}

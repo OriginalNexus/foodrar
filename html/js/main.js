@@ -1,4 +1,5 @@
 var userInfo;
+var currentDisplay = 0;
 
 function userInfoCallback(info)
 {
@@ -21,9 +22,17 @@ function getUserInfo()
     if (info) {
       userInfo = info;
       userInfoCallback();
-      getRecents();
+      refreshContent();
     }
   });
+}
+
+function refreshContent()
+{
+  if (currentDisplay == 0) getRecents();
+  else if (currentDisplay == 1) getBadges();
+  else if (currentDisplay == 2) getRestaurants();
+  else if (currentDisplay == 3) getVouchers();
 }
 
 function setQuote()
@@ -146,22 +155,26 @@ $(document).ready(function()
 
     $('#recents').click(function()
     {
-        getRecents();
+      currentDisplay = 0;
+      refreshContent();
     });
 
     $('#badges').click(function()
     {
-        getBadges();
+      currentDisplay = 1;
+      refreshContent();
     });
 
     $('#vouchers').click(function()
     {
-        getVouchers();
+      currentDisplay = 2;
+      refreshContent();
     });
 
     $('#restaurants').click(function()
     {
-        getRestaurants();
+      currentDisplay = 3;
+      refreshContent();
     });
 
     $('.fixed-action-btn').floatingActionButton();
@@ -233,7 +246,7 @@ $(document).ready(function()
             notes: $('#notesNewPost').val()
         }, function(data) {
           M.toast({ html: 'Post added!' });
-          getRecents();
+          refreshContent();
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });

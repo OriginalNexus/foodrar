@@ -1,0 +1,48 @@
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <h4>Sign up</h4>
+    <form id="registerForm">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="nameRegister" type="text" required>
+          <label for="nameRegister">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="emailRegister" type="text" required>
+          <label for="emailRegister">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="passwordRegister" type="password" required>
+          <label for="passwordRegister">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="phoneRegister" type="tel">
+          <label for="phoneRegister">Phone number</label>
+        </div>
+      </div>
+      <div class="row">
+          <div class="input-field col s6">
+            <label>
+              <input id="personRadioRegister" class="with-gap" name="registerGroup" type="radio" checked />
+              <span>Person</span>
+            </label>
+          </div>
+          <div class="input-field col s6">
+            <label>
+              <input id="companyRadioRegsiter" class="with-gap" name="registerGroup" type="radio"/>
+              <span>Company</span>
+            </label>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" id="registerBtn" class=" modal-action modal-close waves-effect waves-green btn-flat">Sign up</button>
+      </div>
+    </form>
+  </div>
+</div>
