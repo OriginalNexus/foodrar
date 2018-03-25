@@ -256,3 +256,18 @@ body,html
 {
   margin-left: 5px;
 }
+
+.timepicker-canvas-bearing
+{
+  fill: rgb(95, 75, 139) !important;
+}
+
+.timepicker-canvas line
+{
+  stroke: rgb(95, 75, 139) !important;
+}
+
+.timepicker-canvas-bg
+{
+  fill: rgb(95, 75, 139) !important;
+}
