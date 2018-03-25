@@ -206,8 +206,24 @@ body,html
 }
 /*  --------------------------------------------------  */
 
-.fixed-action-btn {
+.fixed-action-btn
+{
     position: fixed;
     bottom: 30px;
     right: 30px;
+}
+
+.timepicker-digital-display
+{
+  background-color: rgb(95, 75, 139) !important;
+}
+
+.badgeImg
+{
+  margin-right:10px;
+  width:26px;
+  height:26px;
+  border-radius:50px;
+  background-color:white;
+  padding: 2px;
 }
