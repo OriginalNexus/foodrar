@@ -122,9 +122,7 @@
       </div>
       <br>
       <div id="pageContainer">
-
-
-        <a href="#newPostModal" class="fixed-action-btn modal-trigger btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+        <a href="#newPostModal" class="fixed-action-btn modal-trigger btn-floating btn-large waves-effect waves-light"><i style="background-color: rgb(95, 75, 139);" class="material-icons">add</i></a>
       </div>
     <?php } ?>
 
@@ -285,7 +283,6 @@
       </form>
     </div>
   </div>
-
 
   <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
