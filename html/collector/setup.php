@@ -2,13 +2,11 @@
 
 	session_start();
 
-	$_SERVER['PHP_AUTH_USER'] = "gigel@gmail.com";
-
 	if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	    die('Server error');
 	}
 
-	$db_conn = new mysqli('10.81.146.145', 'foodrar', 'alinarazvanx2', 'foodrar');
+	$db_conn = new mysqli('localhost', 'foodrar', 'alinarazvanx2', 'foodrar');
 	if ($db_conn->connect_error) {
 		die('Could not connect to database: ' . $db_conn->connect_error);
 	}

@@ -2,7 +2,11 @@
 
 require_once('setup.php');
 
-$stmt = $db_conn->prepare('select * from posts where collector_email = ? or status = \'unprocessed\' order by status');
+$stmt = $db_conn->prepare('select posts.*, status.display_name as status_display_name from posts
+													inner join status on status.name=posts.status
+													where posts.collector_email = ? or posts.status = \'unprocessed\'
+													order by field(posts.status, \'in_progress\', \'unprocessed\', \'complete\')');
+													
 $stmt->bind_param("s", $_SESSION['user']['email']);
 
 if (!$stmt->execute()) {
