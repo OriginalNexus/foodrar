@@ -1,7 +1,7 @@
 var userInfo;
 var currentDisplay = 0;
 
-function userInfoCallback(info)
+function userInfoCallback()
 {
   $('#sideName').html('<i class="fas fa-user"></i> ' + userInfo['name']);
   $('#sideKg').html('<i class="fas fa-recycle"></i> ' + userInfo['quantity'] + ' kg');
