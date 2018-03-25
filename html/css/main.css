@@ -271,3 +271,8 @@ body,html
 {
   fill: rgb(95, 75, 139) !important;
 }
+
+.timepicker-tick.active, .timepicker-tick:hover
+{
+  background-color: rgba(95, 75, 139, 0.25);
+}
