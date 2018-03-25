@@ -114,15 +114,18 @@
         <br>
         Sign up today, make a food donation and help reduce the worldwide food waste!
       </div>
-      <a style="background-color:rgb(95, 75, 139);margin-top:15px; font-size:18px;" data-target="registerModal" class="modal-trigger waves-effect waves-light btn">Sign up</a>
+      <a style="background-color: rgb(95, 75, 139); margin-top: 15px; font-size: 18px;" data-target="registerModal" class="modal-trigger waves-effect waves-light btn">Sign up</a>
     </div>
     <?php } else { ?>
       <div id="motivationalContainer">
-        "Spread motivation around the world, you demo container..."
+
       </div>
       <br>
       <div id="pageContainer">
+        <div class="leftTitle">Recent posts</div>
+        <div id="postsContainer">
 
+        </div>
 
         <a href="#newPostModal" class="fixed-action-btn modal-trigger btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
       </div>

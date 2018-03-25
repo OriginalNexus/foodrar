@@ -1,12 +1,13 @@
+var userInfo;
 
 function userInfoCallback(info)
 {
-  $('#sideName').html('<i class="fas fa-user"></i> ' + info['name']);
-  $('#sideKg').html('<i class="fas fa-recycle"></i> ' + info['quantity'] + ' kg');
+  $('#sideName').html('<i class="fas fa-user"></i> ' + userInfo['name']);
+  $('#sideKg').html('<i class="fas fa-recycle"></i> ' + userInfo['quantity'] + ' kg');
 
-  $('#nameSettings').val(info['name']);
-  $('#phoneSettings').val(info['telephone']);
-  if (info['is_person'])
+  $('#nameSettings').val(userInfo['name']);
+  $('#phoneSettings').val(userInfo['telephone']);
+  if (userInfo['is_person'])
     $('#personRadioSettings').prop("checked", true);
   else
     $('#companyRadioSettings').prop("checked", true);
@@ -16,10 +17,42 @@ function userInfoCallback(info)
 
 function getUserInfo()
 {
-  $.getJSON("user_info.php", function(info) {
-    if (info)
-      userInfoCallback(info);
+  $.getJSON('user_info.php', function(info) {
+    if (info) {
+      userInfo = info;
+      userInfoCallback();
+      getRecents();
+    }
   });
+}
+
+function setQuote()
+{
+  $.getJSON('quotes.php', function(quotes) {
+    if (quotes)
+      $('#motivationalContainer').text('"' + quotes[Math.floor(Math.random() * quotes.length)]['text'] + '"');
+  });
+}
+
+function getRecents()
+{
+  $.getJSON("recents.php", function(recents) {
+    $('#postsContainer').empty();
+    var postDivTemplate = $("<div>");
+    postDivTemplate.load('post.html', function() {
+      $.each(recents, function() {
+        var postDiv = postDivTemplate.clone();
+        postDiv.find('.weight').text(this['quantity'] + " kg");
+        postDiv.find('.location').text(this['location']);
+        postDiv.find('.date-time').text(this['date']);
+        postDiv.find('.status').text(this['status_display_name']);
+        postDiv.appendTo('#postsContainer');
+      });
+    });
+  }).fail(function(req) {
+    M.toast({ html: req.responseText });
+  });
+
 }
 
 $(document).ready(function()
@@ -44,7 +77,7 @@ $(document).ready(function()
 
     $('#recents').click(function()
     {
-        $("#pageContainer").load("recents.html");
+        getRecents();
     });
 
     $('#badges').click(function()
@@ -131,6 +164,7 @@ $(document).ready(function()
             notes: $('#notesNewPost').val()
         }, function(data) {
           M.toast({ html: 'Post added!' });
+          getRecents();
         }).fail(function(req) {
             M.toast({ html: req.responseText });
         });
@@ -143,4 +177,6 @@ $(document).ready(function()
     });
 
     getUserInfo();
+
+    setQuote();
 });
