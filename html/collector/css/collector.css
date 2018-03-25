@@ -1,0 +1,33 @@
+body,html
+{
+  margin,padding: 0;
+}
+
+body
+{
+
+}
+
+.logoImg
+{
+  margin-left:15px;
+  border-radius:50%;
+  background-color:white;
+  padding: 2px;
+  width: 36px;
+  height:auto;
+  vertical-align: middle;
+  margin-top: -8px;
+}
+
+.nav-wrapper
+{
+  background-color: rgb(95, 75, 139);
+}
+
+.collectorName
+{
+  font-size: 24px !important;
+  opacity:0.9;
+  margin-right: 15px;
+}
