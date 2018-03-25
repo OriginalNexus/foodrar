@@ -29,6 +29,12 @@ function getPosts()
         itemDiv.find('.location').text(this['location']);
         itemDiv.find('.date-time').text(this['date']);
         itemDiv.find('.status').text(this['status_display_name']);
+        itemDiv.find('.userName').text(this['user_name']);
+        itemDiv.find('.phoneNumber').text(this['user_telephone']);
+        itemDiv.find('.phoneNumber').attr('href', "tel://" + this['user_telephone']);
+        itemDiv.find('.phoneNumber').click(function(event) {
+          event.stopPropagation();
+        });
         itemDiv.children('.customContainer').data('post', this);
         itemDiv.appendTo('#itemsContainer');
       });
