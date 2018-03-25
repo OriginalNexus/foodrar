@@ -32,6 +32,13 @@ function getPosts()
         itemDiv.children('.customContainer').data('post', this);
         itemDiv.appendTo('#itemsContainer');
       });
+
+      $(".customContainer .location").click(function(event)
+      {
+        window.location = "https://www.google.com/maps/search/?api=1&query=" + encodeURI($(this).parents('.customContainer').data('post')['location']);
+        return false;
+      });
+
       $(".customContainer").click(function(event)
       {
         if ($(this).data('post')['status'] === 'unprocessed') {

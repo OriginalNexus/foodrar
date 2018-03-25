@@ -48,3 +48,9 @@ body
   width:70%;
   margin-left: 15%;
 }
+
+.location
+{
+  text-decoration: underline;
+  margin-left: 6px;
+}
