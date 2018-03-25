@@ -124,6 +124,7 @@
       <br>
       <div id="pageContainer">
         <div id="contentTitle" class="leftTitle"></div>
+        <hr>
         <div id="itemsContainer">
 
         </div>

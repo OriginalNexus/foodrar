@@ -86,16 +86,14 @@ function getRestaurants()
   $('#contentTitle').empty();
   $('#itemsContainer').empty();
   $('.fixed-action-btn').hide();
-  $.getJSON('restaurants.php', function(recents) {
+  $.getJSON('restaurants.php', function(restaurants) {
     $('#contentTitle').text('Involved restaurants');
     var itemDivTemplate = $("<div>");
-    itemDivTemplate.load('post.html', function() {
-      $.each(recents, function() {
+    itemDivTemplate.load('restaurant.html', function() {
+      $.each(restaurants, function() {
         var itemDiv = itemDivTemplate.clone();
-        itemDiv.find('.weight').text(this['quantity'] + " kg");
-        itemDiv.find('.location').text(this['location']);
-        itemDiv.find('.date-time').text(this['date']);
-        itemDiv.find('.status').text(this['status_display_name']);
+        itemDiv.find('.restaurantName').text(this['name']);
+        itemDiv.find('.restaurantWeight').text(this['quantity'] + " kg");
         itemDiv.appendTo('#itemsContainer');
       });
     });
@@ -109,7 +107,21 @@ function getVouchers()
   $('#contentTitle').empty();
   $('#itemsContainer').empty();
   $('.fixed-action-btn').hide();
-  $('#contentTitle').text('Vouchers');
+  $.getJSON('vouchers.php', function(vouchers) {
+    $('#contentTitle').text('Vouchers');
+    var itemDivTemplate = $("<div>");
+    itemDivTemplate.load('voucher.html', function() {
+      $.each(vouchers, function() {
+        var itemDiv = itemDivTemplate.clone();
+        itemDiv.find('.voucherName').text(this['name']);
+        itemDiv.find('.voucherCode').text(this['token']);
+        itemDiv.find('.voucherValue').text(this['value']);
+        itemDiv.appendTo('#itemsContainer');
+      });
+    });
+  }).fail(function(req) {
+    M.toast({ html: req.responseText });
+  });
 }
 
 $(document).ready(function()
