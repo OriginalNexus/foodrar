@@ -2,6 +2,8 @@
 
 	session_start();
 
+	$_SERVER['PHP_AUTH_USER'] = "gigel@gmail.com";
+
 	if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	    die('Server error');
 	}
