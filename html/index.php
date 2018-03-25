@@ -104,6 +104,7 @@
     <?php } ?>
 
     <?php if (!$logged_in) { ?>
+    <img src="img/resizer.png" id="backgroundImg">
     <div id="firstPageContainer">
       <img style="margin-left:22.5px;width:70px;height:70px;" class="logoImg" src="img/logo.png">
       <br>
